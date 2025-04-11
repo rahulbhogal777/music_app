@@ -12,3 +12,16 @@ body{
 .top-heading{
     text-align: center;
 }
+
+.genre, .audio-player, .playlist{
+    width: 150px;
+    height: 50rem;
+    background-color: skyblue
+    
+
+}
+
+.player-function {
+    display: flex;
+
+}
