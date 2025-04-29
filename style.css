@@ -14,14 +14,13 @@ body{
 }
 
 .genre, .audio-player, .playlist{
-    width: 150px;
-    height: 50rem;
-    background-color: skyblue
-    
-
+    width: 25em;
+    height: 50em;
+    background-color: skyblue;
+    border-radius: 16px;
 }
 
 .player-function {
     display: flex;
-
+    justify-content: space-around;
 }
