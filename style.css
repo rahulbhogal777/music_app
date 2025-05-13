@@ -4,14 +4,65 @@ body{
     background-color: rgb(223, 218, 218);
 }
 
-.mode{
-    padding: 10px;
-    text-align: right;
+
+
+body {
+    background-color: white;
 }
 
-.top-heading{
-    text-align: center;
+.top-heading {
+    display: flex;
+    justify-content: space-between;
 }
+
+.top-heading h1 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.toggle {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.button {
+    background-color: white;
+    border: solid 1px black;
+    width: 60px;
+    height: 30px;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: 0.4s;
+    position: relative;
+}
+
+.button::before {
+    position: absolute;
+    content: '';
+    background-color: black;
+    width: 25px;
+    height: 25px;
+    border-radius: 30px;
+    margin: 2.5px;
+    transition: 0.4s;
+}
+
+input:checked+.button {
+    background-color: white;
+
+}
+
+input:checked+.button::before {
+    background-color: black;
+    transform: translateX(30px);
+}
+
+input {
+    display: none;
+}
+
+
 
 .genre, .audio-player, .playlist{
     width: 25em;
