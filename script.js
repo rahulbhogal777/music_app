@@ -72,9 +72,14 @@ const songList = [
 ];
 
 const selectGenre = document.querySelector('#genre');
-console.log(selectGenre.value.toLowerCase());
 
 const songs = document.querySelector('.songs');
+
+for (let i = 0; i < songList.length; i++) {
+  const para = document.createElement("p");
+  para.textContent = songList[i].name;
+  songs.appendChild(para);
+}
 
 selectGenre.addEventListener("change", function () {
     if (selectGenre.value.toLowerCase() === 'all') {
