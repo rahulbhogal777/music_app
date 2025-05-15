@@ -1,6 +1,6 @@
 const songList = [
   {
-    id: 1,
+    id: 2,
     name: "Shopping List",
     artist: "Leo Greal, Yo Yo Honey Singh",
     genre: "HipHop",
@@ -10,7 +10,7 @@ const songList = [
       "https://pagalfree.com/images/128Shopping%20List%20-%20Yo%20Yo%20Honey%20Singh%20128%20Kbps.jpg",
   },
   {
-    id: 2,
+    id: 1,
     name: "Ilzaam ",
     artist: "Arjun, King",
     genre: "Romantic",
@@ -146,10 +146,7 @@ selectGenre.addEventListener("change", function () {
     });
   }
 });
+ 
 
-const song = document.querySelector(".song");
-song.addEventListener("click", function () {
-  
-})
 
 
