@@ -59,8 +59,8 @@ input {
 
 
 .genre, .audio-player, .playlist{
-    width: 25em;
-    height: 50em;
+    width: 35rem;
+    height: 40rem;
     background-color: skyblue;
     border-radius: 16px;
     padding: 20px;
@@ -75,7 +75,7 @@ input {
 .songs p {
     background-color: #ffffff;
     width: 200px;
-    height: 25px;
+    height: 30px;
     border-radius: 10px;
     padding: 5px;
     cursor: pointer;
