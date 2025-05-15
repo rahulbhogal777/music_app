@@ -115,11 +115,31 @@ input {
     box-shadow: 0px 0px 5px rgb(10, 149, 204);
 }
 
+.audio-player {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;;
+    align-items: center;
+    gap: 16px;
+}
+
+.song-poster {
+    width: 22rem;
+    height: 25rem;
+    background-color: rgb(36, 147, 180);
+    border-radius: 16px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 5px 5px rgb(10, 149, 204);
+}
+
 .song-poster img{
-    width: 25em;
-    height: 20em;
+    width: 20rem;
+    height: 18rem;
     object-fit: cover;
-    
 }
 
 
