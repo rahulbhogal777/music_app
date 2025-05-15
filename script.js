@@ -146,6 +146,8 @@ selectGenre.addEventListener("change", function () {
     });
   }
 });
+
+
  
 
 
