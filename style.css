@@ -142,4 +142,13 @@ input {
     object-fit: cover;
 }
 
+.song-poster h1{
+    align-self: flex-start;
+    margin: 16px 0 0 0;
+}
+
+.song-poster p{
+    align-self: flex-start;
+    margin: 0;
+}
 

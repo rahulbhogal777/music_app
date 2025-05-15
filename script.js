@@ -107,7 +107,7 @@ const songs = document.querySelector(".songs");
 
 for (let i = 0; i < songList.length; i++) {
   songs.innerHTML += `
-    <P>${songList[i].name} - ${songList[i].artist}</P>`;
+    <P class="song">${songList[i].name} - ${songList[i].artist}</P>`;
 }
 
 selectGenre.addEventListener("change", function () {
@@ -115,7 +115,7 @@ selectGenre.addEventListener("change", function () {
     songs.innerHTML = "";
     for (let i = 0; i < songList.length; i++) {
       songs.innerHTML += `
-    <P>${songList[i].name} - ${songList[i].artist}</P>`;
+    <P class="song">${songList[i].name} - ${songList[i].artist}</P>`;
     }
   }
   if (selectGenre.value.toLowerCase() === "romantic") {
@@ -123,7 +123,7 @@ selectGenre.addEventListener("change", function () {
     songList.forEach((temp) => {
       if (temp.genre.toLowerCase() === "romantic") {
         songs.innerHTML += `
-    <P>${temp.name} - ${temp.artist}</P>`;
+    <P class="song">${temp.name} - ${temp.artist}</P>`;
       }
     });
   }
@@ -132,7 +132,7 @@ selectGenre.addEventListener("change", function () {
     songList.forEach((temp) => {
       if (temp.genre.toLowerCase() === "hiphop") {
         songs.innerHTML += `
-    <P>${temp.name} - ${temp.artist}</P>`;
+    <P class="song">${temp.name} - ${temp.artist}</P>`;
       }
     });
   }
@@ -141,10 +141,15 @@ selectGenre.addEventListener("change", function () {
     songList.forEach((temp) => {
       if (temp.genre.toLowerCase() === "rock") {
         songs.innerHTML += `
-    <P>${temp.name} - ${temp.artist}</P>`;
+    <P class="song">${temp.name} - ${temp.artist}</P>`;
       }
     });
   }
 });
+
+const song = document.querySelector(".song");
+song.addEventListener("click", function () {
+  
+})
 
 
