@@ -1,6 +1,6 @@
 const songList = [
   {
-    id: 2,
+    id: 1,
     name: "Shopping List",
     artist: "Leo Greal, Yo Yo Honey Singh",
     genre: "HipHop",
@@ -10,7 +10,7 @@ const songList = [
       "https://pagalfree.com/images/128Shopping%20List%20-%20Yo%20Yo%20Honey%20Singh%20128%20Kbps.jpg",
   },
   {
-    id: 1,
+    id: 2,
     name: "Ilzaam ",
     artist: "Arjun, King",
     genre: "Romantic",
@@ -107,7 +107,7 @@ const songs = document.querySelector(".songs");
 
 for (let i = 0; i < songList.length; i++) {
   songs.innerHTML += `
-    <P class="song">${songList[i].name} - ${songList[i].artist}</P>`;
+    <P class="song${songList[i].id}">${songList[i].name}</P>`;
 }
 
 selectGenre.addEventListener("change", function () {
@@ -115,24 +115,24 @@ selectGenre.addEventListener("change", function () {
     songs.innerHTML = "";
     for (let i = 0; i < songList.length; i++) {
       songs.innerHTML += `
-    <P class="song">${songList[i].name} - ${songList[i].artist}</P>`;
+    <P class="song${songList[i].id}">${songList[i].name}</P>`;
     }
   }
   if (selectGenre.value.toLowerCase() === "romantic") {
     songs.innerHTML = "";
-    songList.forEach((temp) => {
-      if (temp.genre.toLowerCase() === "romantic") {
+    for (let i = 0; i < songList.length; i++) {
+      if (songList[i].genre.toLowerCase() === "romantic") {
         songs.innerHTML += `
-    <P class="song">${temp.name} - ${temp.artist}</P>`;
+    <P class="song${songList[i].id}">${songList[i].name}</P>`;
       }
-    });
+    }
   }
   if (selectGenre.value.toLowerCase() === "hiphop") {
     songs.innerHTML = "";
     songList.forEach((temp) => {
       if (temp.genre.toLowerCase() === "hiphop") {
         songs.innerHTML += `
-    <P class="song">${temp.name} - ${temp.artist}</P>`;
+    <P class="song${temp.id}">${temp.name}</P>`;
       }
     });
   }
@@ -141,12 +141,156 @@ selectGenre.addEventListener("change", function () {
     songList.forEach((temp) => {
       if (temp.genre.toLowerCase() === "rock") {
         songs.innerHTML += `
-    <P class="song">${temp.name} - ${temp.artist}</P>`;
+    <P class="song${temp.id}">${temp.name}</P>`;
       }
     });
   }
 });
 
+const audio = document.querySelector(".audio-player");
+
+console.log(audio.querySelector("audio").querySelector("source").src);
+
+
+const song2 = document.querySelector(".song2");
+song2.addEventListener("click", function () {
+  songList.forEach((temp) => {
+    if (temp.name.toLowerCase() === song2.textContent.toLowerCase()) {
+      audio.querySelector("img").src = temp.image;
+      audio.querySelector("h1").textContent = temp.name;
+      audio.querySelector("p").textContent = temp.artist;
+      audio.querySelector("audio").querySelector("source").src = temp.audio;
+      audio.querySelector("audio").load();
+      audio.querySelector("audio").play();
+    }
+  });
+});
+
+const song1  = document.querySelector(".song1");
+song1.addEventListener("click", function () {
+  songList.forEach((temp) => {
+    if (temp.name.toLowerCase() === song1.textContent.toLowerCase()) {
+      audio.querySelector("img").src = temp.image;
+      audio.querySelector("h1").textContent = temp.name;
+      audio.querySelector("p").textContent = temp.artist;
+      audio.querySelector("audio").querySelector("source").src = temp.audio;
+      audio.querySelector("audio").load();
+      audio.querySelector("audio").play();
+    }
+  });
+});
+
+const song3 = document.querySelector(".song3");
+song3.addEventListener("click", function () {
+  songList.forEach((temp) => {
+    if (temp.name.toLowerCase() === song3.textContent.toLowerCase()) {
+      audio.querySelector("img").src = temp.image;
+      audio.querySelector("h1").textContent = temp.name;
+      audio.querySelector("p").textContent = temp.artist;
+      audio.querySelector("audio").querySelector("source").src = temp.audio;
+      audio.querySelector("audio").load();
+      audio.querySelector("audio").play();
+    }
+  });
+});
+
+const song4 = document.querySelector(".song4");
+song4.addEventListener("click", function () {
+  songList.forEach((temp) => {
+    if (temp.name.toLowerCase() === song4.textContent.toLowerCase()) {
+      audio.querySelector("img").src = temp.image;
+      audio.querySelector("h1").textContent = temp.name;
+      audio.querySelector("p").textContent = temp.artist;
+      audio.querySelector("audio").querySelector("source").src = temp.audio;
+      audio.querySelector("audio").load();
+      audio.querySelector("audio").play();
+    }
+  });
+});
+
+const song5 = document.querySelector(".song5");
+song5.addEventListener("click", function () {
+  songList.forEach((temp) => {
+    if (temp.name.toLowerCase() === song5.textContent.toLowerCase()) {
+      audio.querySelector("img").src = temp.image;
+      audio.querySelector("h1").textContent = temp.name;
+      audio.querySelector("p").textContent = temp.artist;
+      audio.querySelector("audio").querySelector("source").src = temp.audio;
+      audio.querySelector("audio").load();
+      audio.querySelector("audio").play();
+    }
+  });
+});
+
+const song6 = document.querySelector(".song6");
+song6.addEventListener("click", function () {
+  songList.forEach((temp) => {
+    if (temp.name.toLowerCase() === song6.textContent.toLowerCase()) {
+      audio.querySelector("img").src = temp.image;
+      audio.querySelector("h1").textContent = temp.name;
+      audio.querySelector("p").textContent = temp.artist;
+      audio.querySelector("audio").querySelector("source").src = temp.audio;
+      audio.querySelector("audio").load();
+      audio.querySelector("audio").play();
+    }
+  });
+});
+
+const song7 = document.querySelector(".song7");
+song7.addEventListener("click", function () {
+  songList.forEach((temp) => {
+    if (temp.name.toLowerCase() === song7.textContent.toLowerCase()) {
+      audio.querySelector("img").src = temp.image;
+      audio.querySelector("h1").textContent = temp.name;
+      audio.querySelector("p").textContent = temp.artist;
+      audio.querySelector("audio").querySelector("source").src = temp.audio;
+      audio.querySelector("audio").load();
+      audio.querySelector("audio").play();
+    }
+  });
+});
+
+const song8 = document.querySelector(".song8");
+song8.addEventListener("click", function () {
+  songList.forEach((temp) => {
+    if (temp.name.toLowerCase() === song8.textContent.toLowerCase()) {
+      audio.querySelector("img").src = temp.image;
+      audio.querySelector("h1").textContent = temp.name;
+      audio.querySelector("p").textContent = temp.artist;
+      audio.querySelector("audio").querySelector("source").src = temp.audio;
+      audio.querySelector("audio").load();
+      audio.querySelector("audio").play();
+    }
+  });
+});
+
+const song9 = document.querySelector(".song9");
+song9.addEventListener("click", function () {
+  songList.forEach((temp) => {
+    if (temp.name.toLowerCase() === song9.textContent.toLowerCase()) {
+      audio.querySelector("img").src = temp.image;
+      audio.querySelector("h1").textContent = temp.name;
+      audio.querySelector("p").textContent = temp.artist;
+      audio.querySelector("audio").querySelector("source").src = temp.audio;
+      audio.querySelector("audio").load();
+      audio.querySelector("audio").play();
+    }
+  });
+});
+
+const song10 = document.querySelector(".song10");
+song10.addEventListener("click", function () {
+  songList.forEach((temp) => {
+    if (temp.name.toLowerCase() === song10.textContent.toLowerCase()) {
+      audio.querySelector("img").src = temp.image;
+      audio.querySelector("h1").textContent = temp.name;
+      audio.querySelector("p").textContent = temp.artist;
+      audio.querySelector("audio").querySelector("source").src = temp.audio;
+      audio.querySelector("audio").load();
+      audio.querySelector("audio").play();
+    }
+  });
+});
 
  
 
