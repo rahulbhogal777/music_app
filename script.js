@@ -144,7 +144,6 @@ function updateSong(song) {
 
 // Add event listener to the songs list
 songs.addEventListener("click", function (event) {
-  console.log(event.target.tagName.toLowerCase());
   if (event.target.tagName.toLowerCase() === "p") {
     updateSong(event.target);
   }
