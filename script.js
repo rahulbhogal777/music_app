@@ -98,14 +98,14 @@ const songList = [
       "https://pagalfree.com/musics/128-Hauli%20Hauli%20-%20Khel%20Khel%20Mein%20128%20Kbps.mp3",
     image:
       "https://pagalfree.com/images/128Hauli%20Hauli%20-%20Khel%20Khel%20Mein%20128%20Kbps.jpg",
-  },
+  }
 ];
 
 const selectGenre = document.querySelector("#genre");
 const songs = document.querySelector(".songs");
 const audio = document.querySelector(".audio-player");
 
-// 
+// Populate the genre select options
 function renderList(filterList) {
   songs.innerHTML = "";
   filterList.forEach((temp) => {
