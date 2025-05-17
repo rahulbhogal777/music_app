@@ -131,6 +131,7 @@ selectGenre.addEventListener("change", function () {
 
 
 
+
 const song2 = document.querySelector(".song2");
 song2.addEventListener("click", () => {
   updateSong(song2);
