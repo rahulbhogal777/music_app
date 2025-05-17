@@ -102,54 +102,33 @@ const songList = [
 ];
 
 const selectGenre = document.querySelector("#genre");
-
 const songs = document.querySelector(".songs");
+const audio = document.querySelector(".audio-player");
 
-for (let i = 0; i < songList.length; i++) {
-  songs.innerHTML += `
-    <P class="song${songList[i].id}">${songList[i].name}</P>`;
+
+function renderList(filterList) {
+  songs.innerHTML = "";
+  filterList.forEach((temp) => {
+    songs.innerHTML += `
+    <p class="song${temp.id}">${temp.name}</p>`;
+  });  
 }
 
+renderList(songList);
+
 selectGenre.addEventListener("change", function () {
-  if (selectGenre.value.toLowerCase() === "all") {
-    songs.innerHTML = "";
-    for (let i = 0; i < songList.length; i++) {
-      songs.innerHTML += `
-    <P class="song${songList[i].id}">${songList[i].name}</P>`;
-    }
-  }
-  if (selectGenre.value.toLowerCase() === "romantic") {
-    songs.innerHTML = "";
-    for (let i = 0; i < songList.length; i++) {
-      if (songList[i].genre.toLowerCase() === "romantic") {
-        songs.innerHTML += `
-    <P class="song${songList[i].id}">${songList[i].name}</P>`;
-      }
-    }
-  }
-  if (selectGenre.value.toLowerCase() === "hiphop") {
-    songs.innerHTML = "";
-    songList.forEach((temp) => {
-      if (temp.genre.toLowerCase() === "hiphop") {
-        songs.innerHTML += `
-    <P class="song${temp.id}">${temp.name}</P>`;
-      }
+  const select = selectGenre.value.toLowerCase();
+  if (select === "all") {
+    renderList(songList); 
+  } else {
+    const filtered = songList.filter((temp) => {
+      return temp.genre.toLowerCase() === select;
     });
-  }
-  if (selectGenre.value.toLowerCase() === "rock") {
-    songs.innerHTML = "";
-    songList.forEach((temp) => {
-      if (temp.genre.toLowerCase() === "rock") {
-        songs.innerHTML += `
-    <P class="song${temp.id}">${temp.name}</P>`;
-      }
-    });
+    renderList(filtered);
   }
 });
 
-const audio = document.querySelector(".audio-player");
 
-console.log(audio.querySelector("audio").querySelector("source").src);
 
 
 const song2 = document.querySelector(".song2");
@@ -163,7 +142,7 @@ song1.addEventListener("click", () => {
 });
 
 const song3 = document.querySelector(".song3");
-song3.addEventListener("click", () => {
+song3.addEventListener("click,", () => {
   updateSong(song3);
 });
 
