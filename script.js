@@ -105,7 +105,7 @@ const selectGenre = document.querySelector("#genre");
 const songs = document.querySelector(".songs");
 const audio = document.querySelector(".audio-player");
 
-// Populate the genre select options
+
 function renderList(filterList) {
   songs.innerHTML = "";
   filterList.forEach((temp) => {
