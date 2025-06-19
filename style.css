@@ -133,7 +133,7 @@ input {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    box-shadow: 5px 5px 5px rgb(10, 149, 204);
+    /* box-shadow: 5px 5px 5px rgb(10, 149, 204); */
 }
 
 .song-poster img{

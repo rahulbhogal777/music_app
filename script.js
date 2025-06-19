@@ -108,6 +108,7 @@ const checkbox = document.querySelector("#check");
 const body = document.querySelector("body");
 const genre = document.querySelector(".genre");
 const playList = document.querySelector(".playlist");
+const songPoster = document.querySelector(".song-poster");
 
 
 function renderList(filterList) {
@@ -161,12 +162,13 @@ checkbox.addEventListener("change", () => {
     audio.style.backgroundColor = "rgba(121, 119, 119, 0.61)";
     playList.style.backgroundColor = "rgba(121, 119, 119, 0.61)";
     songs.style.color = "black";
+    songPoster.style.backgroundColor = "black";
   } else {
     body.style.backgroundColor = "rgb(223, 218, 218)";
     body.style.color = "black";
     genre.style.backgroundColor = "skyblue";
     audio.style.backgroundColor = "skyblue";
-    playList.style.backgroundColor = "skyblue";
+    playList.style.backgroundColor = "rgb(36, 147, 180)";
   }
 })
 
