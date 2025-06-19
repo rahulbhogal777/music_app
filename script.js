@@ -104,13 +104,17 @@ const songList = [
 const selectGenre = document.querySelector("#genre");
 const songs = document.querySelector(".songs");
 const audio = document.querySelector(".audio-player");
+const checkbox = document.querySelector("#check");
+const body = document.querySelector("body");
+const genre = document.querySelector(".genre");
+const playList = document.querySelector(".playlist");
 
 
 function renderList(filterList) {
   songs.innerHTML = "";
   filterList.forEach((temp) => {
     songs.innerHTML += `
-    <p class="song${temp.id}">${temp.name}</p>`;
+    <p class="song">${temp.name}</p>`;
   });  
 }
 
@@ -148,6 +152,22 @@ songs.addEventListener("click", function (event) {
     updateSong(event.target);
   }
 });
+
+checkbox.addEventListener("change", () => {
+  if (checkbox.checked) {
+    body.style.backgroundColor = "black";
+    body.style.color = "white";
+    genre.style.backgroundColor = "rgba(121, 119, 119, 0.61)";
+    audio.style.backgroundColor = "rgba(121, 119, 119, 0.61)";
+    playList.style.backgroundColor = "rgba(121, 119, 119, 0.61)";
+  } else {
+    body.style.backgroundColor = "rgb(223, 218, 218)";
+    body.style.color = "black";
+    genre.style.backgroundColor = "skyblue";
+    audio.style.backgroundColor = "skyblue";
+    playList.style.backgroundColor = "skyblue";
+  }
+})
 
  
 
