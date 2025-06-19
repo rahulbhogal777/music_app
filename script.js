@@ -160,6 +160,7 @@ checkbox.addEventListener("change", () => {
     genre.style.backgroundColor = "rgba(121, 119, 119, 0.61)";
     audio.style.backgroundColor = "rgba(121, 119, 119, 0.61)";
     playList.style.backgroundColor = "rgba(121, 119, 119, 0.61)";
+    songs.style.color = "black";
   } else {
     body.style.backgroundColor = "rgb(223, 218, 218)";
     body.style.color = "black";
