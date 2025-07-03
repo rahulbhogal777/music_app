@@ -98,7 +98,7 @@ const songList = [
       "https://pagalfree.com/musics/128-Hauli%20Hauli%20-%20Khel%20Khel%20Mein%20128%20Kbps.mp3",
     image:
       "https://pagalfree.com/images/128Hauli%20Hauli%20-%20Khel%20Khel%20Mein%20128%20Kbps.jpg",
-  }
+  },
 ];
 
 const selectGenre = document.querySelector("#genre");
@@ -109,14 +109,15 @@ const body = document.querySelector("body");
 const genre = document.querySelector(".genre");
 const playList = document.querySelector(".playlist");
 const songPoster = document.querySelector(".song-poster");
-
+const prev = document.querySelector("#prev");
+const next = document.querySelector("#next");
 
 function renderList(filterList) {
   songs.innerHTML = "";
   filterList.forEach((temp) => {
     songs.innerHTML += `
     <p class="song">${temp.name}</p>`;
-  });  
+  });
 }
 
 renderList(songList);
@@ -124,7 +125,7 @@ renderList(songList);
 selectGenre.addEventListener("change", function () {
   const select = selectGenre.value.toLowerCase();
   if (select === "all") {
-    renderList(songList); 
+    renderList(songList);
   } else {
     const filtered = songList.filter((temp) => {
       return temp.genre.toLowerCase() === select;
@@ -136,8 +137,8 @@ selectGenre.addEventListener("change", function () {
 // Function to update the song details in the audio player
 function updateSong(song) {
   const songName = song.textContent.toLowerCase();
-  const selectedSong = songList.find((temp) =>
-    temp.name.toLowerCase() === songName
+  const selectedSong = songList.find(
+    (temp) => temp.name.toLowerCase() === songName
   );
   audio.querySelector("img").src = selectedSong.image;
   audio.querySelector("h1").textContent = selectedSong.name;
@@ -154,6 +155,44 @@ songs.addEventListener("click", function (event) {
   }
 });
 
+function getID() {
+  const name = audio.querySelector("h1").textContent.toLowerCase();
+  const currentSong = songList.find((song) => {
+    return song.name.toLowerCase() === name;
+  });
+  return currentSong.id;
+}
+
+function updateSongById(id) {
+  const currentSong = songList.find((song) => {
+    return song.id === id;
+  });
+  audio.querySelector("img").src = currentSong.image;
+  audio.querySelector("h1").textContent = currentSong.name;
+  audio.querySelector("p").textContent = currentSong.artist;
+  audio.querySelector("audio").querySelector("source").src = currentSong.audio;
+  audio.querySelector("audio").load();
+  audio.querySelector("audio").play();
+}
+
+prev.addEventListener("click", () => {
+  const id = getID();
+  if (id > 1) {
+    updateSongById(id - 1);
+  } else {
+    updateSongById(songList[songList.length - 1].id);
+  }
+});
+
+next.addEventListener('click', () => {
+  const id = getID();
+  if (id < 10) {
+    updateSongById(id + 1);
+  } else {
+    updateSongById(1);
+  }
+})
+
 checkbox.addEventListener("change", () => {
   if (checkbox.checked) {
     body.style.backgroundColor = "black";
@@ -168,11 +207,7 @@ checkbox.addEventListener("change", () => {
     body.style.color = "black";
     genre.style.backgroundColor = "skyblue";
     audio.style.backgroundColor = "skyblue";
-    playList.style.backgroundColor = "rgb(36, 147, 180)";
+    playList.style.backgroundColor = "skyblue";
+    songPoster.style.backgroundColor = "rgb(36, 147, 180)";
   }
-})
-
- 
-
-
-
+});
