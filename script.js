@@ -113,6 +113,9 @@ const prev = document.querySelector("#prev");
 const next = document.querySelector("#next");
 const addList = document.querySelector(".addList");
 const hr = document.querySelector("hr");
+const search = document.querySelector("#search");
+const createPlaylist = document.querySelector("#add-playlist");
+const currentList = document.querySelector(".currentList");
 
 function renderList(filterList) {
   songs.innerHTML = "";
@@ -193,7 +196,24 @@ next.addEventListener('click', () => {
   } else {
     updateSongById(1);
   }
+});
+
+createPlaylist.addEventListener("click", (event) => {
+  if(search.value.trim() === "") {
+    alert("Please enter a song name to add to the playlist.");
+    return;
+  } else {
+    event.preventDefault();
+    const songName = search.value.trim();
+    const newList = document.createElement("p");
+    const newdiv = document.createElement("div");
+    newList.innerText = songName;
+    addList.appendChild(newList);
+    currentList.appendChild(newdiv);
+    newdiv.className = songName;
+  }
 })
+
 
 checkbox.addEventListener("change", () => {
   if (checkbox.checked) {
