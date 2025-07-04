@@ -111,6 +111,8 @@ const playList = document.querySelector(".playlist");
 const songPoster = document.querySelector(".song-poster");
 const prev = document.querySelector("#prev");
 const next = document.querySelector("#next");
+const addList = document.querySelector(".addList");
+const hr = document.querySelector("hr");
 
 function renderList(filterList) {
   songs.innerHTML = "";
@@ -202,6 +204,7 @@ checkbox.addEventListener("change", () => {
     playList.style.backgroundColor = "rgba(121, 119, 119, 0.61)";
     songs.style.color = "black";
     songPoster.style.backgroundColor = "black";
+    hr.style.borderBottom = "2px double white";
   } else {
     body.style.backgroundColor = "rgb(223, 218, 218)";
     body.style.color = "black";
@@ -209,5 +212,6 @@ checkbox.addEventListener("change", () => {
     audio.style.backgroundColor = "skyblue";
     playList.style.backgroundColor = "skyblue";
     songPoster.style.backgroundColor = "rgb(36, 147, 180)";
+    hr.style.borderBottom = "2px double black";
   }
 });

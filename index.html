@@ -44,15 +44,20 @@
         <div class="control">
           <button id="prev" class="btn">Prev</button>
           <button id="next" class="btn">Next</button>
-        </div> 
+        </div>
         <div class="addSong">
-          <input type="button" value="Add Song" id="addSong" class="btn"/>
+          <input type="button" value="Add Song" id="addSong" class="btn" />
         </div>
       </div>
-      
+
       <div class="playlist">
-        <input type="text" id="search" placeholder="Enter Playlist Name" />
-        <button id="add-playlist">Create Playlist</button>
+        <form>
+          <label for="search"><h2>Create Playlist</h2></label>
+          <input type="text" id="search" placeholder="Enter Playlist Name" />
+          <br>
+          <button id="add-playlist">Create</button>
+        </form>
+        <hr>
         <div class="currentList">
           <h2>Current Playlist</h2>
         </div>
@@ -68,6 +73,5 @@
       crossorigin="anonymous"
     ></script>
     <script src="script.js"></script>
-    
   </body>
 </html>
