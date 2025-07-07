@@ -250,11 +250,11 @@ checkbox.addEventListener("change", () => {
     body.style.color = "white";
     genre.style.backgroundColor = "rgba(121, 119, 119, 0.61)";
     audio.style.backgroundColor = "rgba(121, 119, 119, 0.61)";
+
     playList.style.backgroundColor = "rgba(121, 119, 119, 0.61)";
     songs.style.color = "black";
     songPoster.style.backgroundColor = "black";
     hr.style.borderBottom = "2px double white";
-    currentList.style.color = "white";
   } else {
     body.style.backgroundColor = "rgb(223, 218, 218)";
     body.style.color = "black";
@@ -263,6 +263,5 @@ checkbox.addEventListener("change", () => {
     playList.style.backgroundColor = "skyblue";
     songPoster.style.backgroundColor = "rgb(36, 147, 180)";
     hr.style.borderBottom = "2px double black";
-    currentList.style.color = "black";
   }
 });
