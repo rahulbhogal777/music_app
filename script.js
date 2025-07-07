@@ -116,6 +116,7 @@ const hr = document.querySelector("hr");
 const search = document.querySelector("#search");
 const createPlaylist = document.querySelector("#add-playlist");
 const currentList = document.querySelector(".currentList");
+const addSong = document.querySelector("#addSong");
 
 function renderList(filterList) {
   songs.innerHTML = "";
@@ -199,8 +200,8 @@ next.addEventListener('click', () => {
 });
 
 createPlaylist.addEventListener("click", (event) => {
-  if(search.value.trim() === "") {
-    alert("Please enter a song name to add to the playlist.");
+  if (search.value.trim() === "") {
+    alert("Please enter name.");
     return;
   } else {
     event.preventDefault();
@@ -209,10 +210,38 @@ createPlaylist.addEventListener("click", (event) => {
     const newdiv = document.createElement("div");
     newList.innerText = songName;
     addList.appendChild(newList);
+    newList.style.color = "black";
     currentList.appendChild(newdiv);
     newdiv.className = songName;
+    newdiv.style.display = "block";
   }
+});
+
+addSong.addEventListener("click", () => {
+  const song = document.createElement("p");
+  song.textContent = audio.querySelector("h1").textContent;
+  const songDiv = currentList.querySelectorAll("div");
+  songDiv.forEach((div) => {
+    if(div.style.display === "block") {
+      div.appendChild(song);
+      song.style.color = "black";
+    }
+  })
 })
+
+addList.addEventListener("click", (event) => {
+  if (event.target.tagName.toLowerCase() === "p") {
+    const name = event.target.textContent;
+    const songDiv = currentList.querySelectorAll("div");
+    songDiv.forEach((div) => {
+      if (div.className !== name) {
+        div.style.display = "none";
+      } else {
+        div.style.display = "block";
+      }
+    });
+  }
+});
 
 
 checkbox.addEventListener("change", () => {
@@ -225,6 +254,7 @@ checkbox.addEventListener("change", () => {
     songs.style.color = "black";
     songPoster.style.backgroundColor = "black";
     hr.style.borderBottom = "2px double white";
+    currentList.style.color = "white";
   } else {
     body.style.backgroundColor = "rgb(223, 218, 218)";
     body.style.color = "black";
@@ -233,5 +263,6 @@ checkbox.addEventListener("change", () => {
     playList.style.backgroundColor = "skyblue";
     songPoster.style.backgroundColor = "rgb(36, 147, 180)";
     hr.style.borderBottom = "2px double black";
+    currentList.style.color = "black";
   }
 });
